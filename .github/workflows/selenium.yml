@@ -20,6 +20,14 @@ jobs:
       # 2️⃣ Set build date
       - name: Set build date
         run: echo "BUILD_DATE=$(date +%Y-%m-%d)" >> $GITHUB_ENV
+      # 2️⃣ Valid
+      - name: Debug secrets
+        run: |
+          echo "User exists"
+          if [ -z "${{ secrets.DOCKERHUB_TOKEN }}" ]; then
+            echo "Password is EMPTY"
+            exit 1
+          fi
 
       # 3️⃣ Login DockerHub
       - name: Login to DockerHub
