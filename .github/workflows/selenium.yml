@@ -49,7 +49,7 @@ jobs:
         run: |
           docker run --rm \
             -v ${{ github.workspace }}:/workspace \
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:v1.3.0 \
+            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:v2.0.0 \
             pytest
 
       # 6️⃣ Push image
